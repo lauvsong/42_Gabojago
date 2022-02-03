@@ -48,3 +48,9 @@ create table favorites
     constraint favorites_user_id_fk
         foreign key (user_id) references users (id)
 );
+
+ALTER DATABASE categories CHARACTER SET utf8 COLLATE utf8mb4_general_ci;
+ALTER DATABASE products CHARACTER SET utf8 COLLATE utf8mb4_general_ci;
+ALTER DATABASE tiers CHARACTER SET utf8 COLLATE utf8mb4_general_ci;
+ALTER DATABASE users CHARACTER SET utf8 COLLATE utf8mb4_general_ci;
+ALTER DATABASE favorites CHARACTER SET utf8 COLLATE utf8mb4_general_ci;
