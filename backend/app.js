@@ -9,8 +9,8 @@ require("dotenv").config();
 const { sequelize } = require('./models');
 
 var indexRouter = require("./routes/index");
-var userRouter = require("./routes/user/user");
-var usersRouter = require("./routes/user/users");
+var userRouter = require("./routes/user");
+var usersRouter = require("./routes/users");
 var productRouter = require("./routes/product");
 var productsRouter = require("./routes/products");
 var app = express();
@@ -45,7 +45,7 @@ sequelize.sync({ force: false })
   .catch((err) => {
     console.error(err);
   })
-  
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
