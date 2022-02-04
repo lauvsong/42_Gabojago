@@ -3,9 +3,9 @@ require("dotenv").config();
 const env = process.env;
 
 const development = {
-  username: "admin",
-  password: "P@ssw0rd",
-  database: "nodejs",
+  username: env.DB_USER,
+  password: env.DB_PASSWORD,
+  database: env.DB_NAME,
   host: env.DB_HOST,
   dialect: "mariadb",
   port: env.DB_PORT,
