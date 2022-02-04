@@ -6,8 +6,8 @@ const development = {
     "username": "admin",
     "password": "P@ssw0rd",
     "database": "nodejs",
-    "host": "localhost",
-    "dialect": "mysql",
+    "host": "green-db",
+    "dialect": "mariadb",
     "port": env.DB_PORT,
     "define": {
         "underscored": false,
@@ -25,8 +25,8 @@ const production = {
     "username": "admin",
     "password": "P@ssw0rd",
     "database": "nodejs",
-    "host": "localhost",
-    "dialect": "mysql",
+    "host": "green-db",
+    "dialect": "mariadb",
     "port": env.DB_PORT,
     "define": {
         "underscored": false,

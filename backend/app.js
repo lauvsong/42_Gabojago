@@ -13,9 +13,22 @@ var userRouter = require("./routes/user/user");
 var usersRouter = require("./routes/user/users");
 var productRouter = require("./routes/product");
 var productsRouter = require("./routes/products");
-
 var app = express();
-app.set('port', process.env.Port || 3001);
+const normalizePort = function (val) {
+  const port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    return val;
+  }
+
+  if (port >= 0) {
+    return port;
+  }
+
+  return false;
+}
+const port = normalizePort(process.env.PORT || '8080');
+app.set('port', port);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -32,6 +45,7 @@ sequelize.sync({ force: false })
   .catch((err) => {
     console.error(err);
   })
+  
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -60,8 +74,8 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-app.listen(app.get('port'), () => {
-  console.log(app.get('port'), '번 포트에서 대기 중');
-})
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}.`);
+});
 
 module.exports = app;
