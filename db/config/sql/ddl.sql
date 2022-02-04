@@ -10,9 +10,10 @@ create table products
     id          int auto_increment
         primary key,
     category_id int default 1                not null,
-    bacode      varchar(50)                  null,
+    name        varchar(50)                  not null,
     hit         int default 0                not null,
     info        longtext collate utf8mb4_bin not null,
+    bacode      varchar(50)                  null,
     constraint products_category_id_fk
         foreign key (category_id) references categories (id)
 );
