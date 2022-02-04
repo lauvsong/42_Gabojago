@@ -3,9 +3,9 @@ require('dotenv').config()
 const env = process.env
 
 const development = {
-    "username": "root",
-    "password": "root",
-    "database": "greenDB",
+    "username": "admin",
+    "password": "P@ssw0rd",
+    "database": "nodejs",
     "host": "localhost",
     "dialect": "mysql",
     "port": env.DB_PORT,
@@ -22,11 +22,11 @@ const development = {
 }
 
 const production = {
-    "username": env.DB_USER,
-    "password": env.DB_PW,
-    "database": env.DB_NAME,
-    "host": env.DB_HOST,
-    "dialect": env.DB_TYPE,
+    "username": "admin",
+    "password": "P@ssw0rd",
+    "database": "nodejs",
+    "host": "localhost",
+    "dialect": "mysql",
     "port": env.DB_PORT,
     "define": {
         "underscored": false,

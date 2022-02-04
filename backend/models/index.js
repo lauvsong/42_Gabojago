@@ -4,17 +4,12 @@ const Favorites = require('./favorites');
 const Product = require('./product');
 const Tiers = require('./tiers');
 const User = require('./user');
-const dbConfig = require("../config");
 
 const env = process.env.NODE_ENV || 'development';
+const config = require('../config')[env]
 const db = {};
 
-const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-    host: dbConfig.HOST,
-    dialect: dbConfig.dialect,
-    port: dbConfig.port,
-    operatorsAliases: 0
-});
+const sequelize = new Sequelize(config.database, config.username, config.password, config)
 
 db.sequelize = sequelize;
 db.Categories = Categories;
