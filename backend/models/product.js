@@ -1,46 +1,36 @@
 const Sequelize = require('sequelize');
 
-module.exports = class User extends Sequelize.Model {//알아서 id를 기본키로 연결해주기에 적어줄 필요가 없다.
+module.exports = class Product extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
-            username: {
-                type: Sequelize.STRING(20),//varchar(20)
-                allowNull: false,
-                unique: true,
-            },
-            pw: {
-                type: Sequelize.STRING(100),//varchar(50)
-                allowNull: false,
-            },
             name: {
-                type: Sequelize.STRING(20),//varchar(20)
-                allowNull: false,
-            },
-            age: {
-                type: Sequelize.INTEGER.UNSIGNED,//int unsigned
+                type: Sequelize.STRING(50),
                 allowNull: true,
             },
-            married: {
-                type: Sequelize.BOOLEAN,//tinyint
-                allowNull: false,
+            barcode: {
+                type: Sequelize.STRING(50)
             },
-            isAdmin: { // 관리자 = 1, 일반사용자 = 0
-                type: Sequelize.BOOLEAN,//tinyint
+            info: {
+                type: Sequelize.STRING(200),
+                allowNull: true,
+            },
+            hit: {
+                type: Sequelize.INTEGER.UNSIGNED,
                 allowNull: false,
-            }
-        }, {//테이블 옵션
+                defaultValue: 0
+            },
+        }, {
             sequelize,
-            timestamps: true, //로우가 생성/수정될때 시간이 자동으로 입력된다.
-            underscored: false, //테이블명 & 컬럼명을 스네이크 케이스로 바꿈(creaㄷted_at)
-            modelName: 'User', //모델 이름 설정
-            tableName: 'users', //테이블 명(소문자로 만듦)
-            paranoid: true, //true -> deletedAt이라는 컬럼이 생성됨 .여기에 지운 시각이 기록됨. => 로우 복원 가능
-            charset: 'utf8',
-            collate: 'utf8_general_ci', //한글 입력
+            timestamps: true,
+            modelName: 'Comment',
+            tableName: 'comments',
+            paranoid: true,
+            charset: 'utf8mb4',
+            collate: 'utf8mb4_general_ci',
         });
     }
     static associate(db) {
-        //1:N관계의 1에게 해당
-        db.User.hasMany(db.Comment, { foreignKey: 'commenter', sourceKey: 'id' });//외래키 따로 지정X -> 모델명 + 기본키 = userId가 외래키로 생성됨.
+        db.Comment.belongsTo(db.User, { foreignKey: 'commenter', targetKey: 'id' });//1:N관계의 N에게 해당-> 다른 모델의 정보가 들어가는 테이블에 사용. ex) User의 정보가 Comments에 들어가기 때문이다.
+        //belongsTo에서 외래키를 선정함.
     }
 };
