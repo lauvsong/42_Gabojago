@@ -7,7 +7,7 @@ var Categories = require("../models").categories;
 const { QueryTypes } = require("sequelize");
 
 // 바코드를 통한 특정 제품 조회
-router.get("/:bacode", async (req, res) => {
+router.get("/bacode/:bacode", async (req, res) => {
   let query = `
   SELECT p.*,c.name as category_name FROM products AS p
   LEFT JOIN categories AS c
@@ -21,6 +21,8 @@ router.get("/:bacode", async (req, res) => {
       type: QueryTypes.SELECT,
       raw: true,
     });
+
+    products.map((data) => (data.info = JSON.parse(data.info)));
     res.send(products);
   } catch (error) {
     console.error(error);
@@ -42,6 +44,8 @@ router.get("/:id", async (req, res) => {
       type: QueryTypes.SELECT,
       raw: true,
     });
+
+    products.map((data) => (data.info = JSON.parse(data.info)));
     res.send(products);
   } catch (error) {
     console.error(error);
@@ -115,7 +119,7 @@ router.post("/register", async (req, res) => {
         category_id: req.body.category_id,
         name: req.body.name,
         hit: req.body.hit,
-        info: req.body.info,
+        info: JSON.stringify(req.body.info),
         bacode: req.body.bacode,
       },
       type: QueryTypes.SELECT,

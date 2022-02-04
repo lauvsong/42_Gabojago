@@ -19,6 +19,8 @@ router.get("/", async (req, res) => {
       type: QueryTypes.SELECT,
       raw: true,
     });
+
+    products.map((data) => (data.info = JSON.parse(data.info)));
     res.send(products);
   } catch (error) {
     console.error(error);
@@ -39,6 +41,8 @@ router.get("/rank", async (req, res) => {
       type: QueryTypes.SELECT,
       raw: true,
     });
+
+    products.map((data) => (data.info = JSON.parse(data.info)));
     res.send(products);
   } catch (error) {
     console.error(error);
@@ -46,20 +50,22 @@ router.get("/rank", async (req, res) => {
 });
 
 // 특정 카테고리 제품 리스트 조회
-router.get("/:category", async (req, res) => {
+router.get("/category/:category_id", async (req, res) => {
   let query = `
   SELECT p.*,c.name as category_name FROM products AS p
   LEFT JOIN categories AS c
   on p.category_id = c.id
-  WHERE c.id = :category
+  WHERE c.id = :category_id
   `;
 
   try {
     const products = await sequelize.query(query, {
-      replacements: { category: req.params.category },
+      replacements: { category_id: req.params.category_id },
       type: QueryTypes.SELECT,
       raw: true,
     });
+
+    products.map((data) => (data.info = JSON.parse(data.info)));
     res.send(products);
   } catch (error) {
     console.error(error);
