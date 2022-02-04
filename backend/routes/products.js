@@ -56,6 +56,7 @@ router.get("/category/:category_id", async (req, res) => {
   LEFT JOIN categories AS c
   on p.category_id = c.id
   WHERE c.id = :category_id
+  ORDER BY p.hit DESC
   `;
 
   try {
