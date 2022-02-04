@@ -55,14 +55,25 @@ router.get("/:id", async (req, res) => {
 // 특정 제품 정보 전체 수정
 router.put("/:id", async (req, res) => {
   let query = `
-  UPDATE products SET info = :info WHERE id = :id
+  UPDATE products SET 
+  info = :info 
+  category_id = :category_id
+  name = :name
+  bacode = :bacode
+  hit = :hit
+  WHERE id = :id
   `;
 
   try {
     await sequelize.query(query, {
-      replacements: { id: req.params.id, info: req.body },
-      type: QueryTypes.SELECT,
-      raw: true,
+      replacements: {
+        id: req.params.id,
+        category_id: req.body.category_id,
+        name: req.body.name,
+        bacode: req.body.bacode,
+        hit: req.body.hit,
+        info: JSON.stringify(req.body.info),
+      },
     });
     res.send();
   } catch (error) {
@@ -73,14 +84,12 @@ router.put("/:id", async (req, res) => {
 // 특정 제품 삭제
 router.delete("/:id", async (req, res) => {
   let query = `
-  DELETE products WHERE id = :id
+  DELETE FROM products WHERE id = :id
   `;
 
   try {
     await sequelize.query(query, {
       replacements: { id: req.params.id },
-      type: QueryTypes.SELECT,
-      raw: true,
     });
     res.send();
   } catch (error) {
@@ -91,14 +100,12 @@ router.delete("/:id", async (req, res) => {
 // 특정 제품 조회수 +1 갱신
 router.patch("/:id", async (req, res) => {
   let query = `
-  UPDATE products SET hit = :hit WHERE id = :id
+  UPDATE products SET hit = hit + 1 WHERE id = :id
   `;
 
   try {
     await sequelize.query(query, {
-      replacements: { id: req.params.id, hit: req.params.hit + 1 },
-      type: QueryTypes.SELECT,
-      raw: true,
+      replacements: { id: req.params.id },
     });
     res.send();
   } catch (error) {
@@ -122,8 +129,6 @@ router.post("/register", async (req, res) => {
         info: JSON.stringify(req.body.info),
         bacode: req.body.bacode,
       },
-      type: QueryTypes.SELECT,
-      raw: true,
     });
     res.send();
   } catch (error) {
