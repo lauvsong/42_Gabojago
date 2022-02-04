@@ -32,8 +32,9 @@ module.exports = class User extends Sequelize.Model {//알아서 id를 기본키
         });
     }
     static associate(db) {
-        //1:N관계의 1에게 해당
-        db.User.hasMany(db.Comment, { foreignKey: 'commenter', sourceKey: 'id' });//외래키 따로 지정X -> 모델명 + 기본키 = userId가 외래키로 생성됨.
+        //1:N관계의 n에게 해당
+        db.User.belongsTo(db.Tiers, { foreignKey: 'tier_id', targetKey: 'id' });//1:N관계의 N에게 해당-> 다른 모델의 정보가 들어가는 테이블에 사용. ex) User의 정보가 Comments에 들어가기 때문이다.
+        db.User.hasMany(db.Favorites, { foreignKey: 'user_id', sourceKey: 'id' });//외래키 따로 지정X -> 모델명 + 기본키 = userId가 외래키로 생성됨.
     }
 };
 

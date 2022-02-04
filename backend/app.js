@@ -8,10 +8,10 @@ const nunjucks = require('nunjucks');
 const { sequelize } = require('./models');
 
 var indexRouter = require("./routes/index");
-var userRouter = require("./routes/user");
-var usersRouter = require("./routes/users");
+var userRouter = require("./routes/user/user");
+var usersRouter = require("./routes/user/users");
 var productRouter = require("./routes/product");
-var productsRouter = require("/routes/products");
+var productsRouter = require("./routes/products");
 
 var app = express();
 app.set('port', process.env.Port || 3001);
