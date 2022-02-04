@@ -1,7 +1,7 @@
 # 🌏녹색 탐지기🌏
 ![](https://images.velog.io/images/sophia5460/post/a9077c0f-77ec-49bf-9e94-14e417732c03/image.png)
 <br>
-####녹색탐지기는 Google mobile vision 을 이용해서 바코드 스캔을 통해 물건을 찍었을 때, 환경오염 부하나 폐기물 발생이 적은지 확인하는 어플리케이션입니다.
+#### 녹색탐지기는 Google mobile vision 을 이용해서 바코드 스캔을 통해 물건을 찍었을 때, 환경오염 부하나 폐기물 발생이 적은지 확인하는 어플리케이션입니다.
 ---
 # 목차
 
