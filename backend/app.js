@@ -3,6 +3,9 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+const nunjucks = require('nunjucks');
+
+const { sequelize } = require('./models');
 
 var indexRouter = require("./routes/index");
 var userRouter = require("./routes/user");
@@ -11,11 +14,23 @@ var productRouter = require("./routes/product");
 var productsRouter = require("/routes/products");
 
 var app = express();
+app.set('port', process.env.Port || 3001);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
+nunjucks.configure('views', {
+  express: app,
+  watch: true,
+});
 
+sequelize.sync({ force: false })
+  .then(() => {
+    console.log('데이터베이스 연결 성공');
+  })
+  .catch((err) => {
+    console.error(err);
+  })
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -43,5 +58,9 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+app.listen(app.get('port'), () => {
+  console.log(app.get('port'), '번 포트에서 대기 중');
+})
 
 module.exports = app;
