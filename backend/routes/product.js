@@ -22,7 +22,11 @@ router.get("/bacode/:bacode", async (req, res) => {
       raw: true,
     });
 
+    if (Object.keys(products).length === 0) {
+      return res.status(405);
+    }
     products.map((data) => (data.info = JSON.parse(data.info)));
+
     res.send(products);
   } catch (error) {
     console.error(error);
