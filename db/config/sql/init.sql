@@ -52,6 +52,21 @@ create table favorites
         foreign key (user_id) references users (id)
 );
 
+insert into greenDB.users (id, username, pw, point, tier_id)
+values  (1, 'test1', 'test1', 0, 1),
+        (2, 'test2', 'test1', 50, 2),
+        (3, 'test3', 'test3', 100, 3),
+        (4, 'test4', 'test4', 150, 4),
+        (5, 'test5', 'test5', 200, 5),
+        (6, 'test6', 'test6', 250, 6);
+
+insert into greenDB.favorites (id, user_id, product_id)
+values  (1, 1, 1),
+        (2, 1, 2),
+        (3, 2, 1),
+        (4, 2, 2),
+        (5, 2, 3);
+
 insert into greenDB.products (id, category_id, name, hit, info, bacode)
 values  (1, 5, '하이트진로', 0, '{
     "company": "하이트진로",
