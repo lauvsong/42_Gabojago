@@ -95,4 +95,8 @@ https://app.swaggerhub.com/apis-docs/gabojago/gabojago/1.2.0
 
 
 # 발표 ppt
+[42조 가보자고 ppt_최종.pptx](https://github.com/gdsckoreahackathon2022/42_Gabojago/files/8007088/42.ppt_.pptx)
+
+# 발표 대본
+[가보자고 발표 대본.pdf](https://github.com/gdsckoreahackathon2022/42_Gabojago/files/8007090/default.pdf)
 
