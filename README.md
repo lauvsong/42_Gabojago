@@ -106,8 +106,8 @@ https://gabojago.notion.site/a3128ce9b5cb49c5be9f212ee35845de
 
 
 # 발표 ppt
-[42조 가보자고 ppt_최종.pptx](https://github.com/gdsckoreahackathon2022/42_Gabojago/files/8007088/42.ppt_.pptx)
-[42조 가보자고 ppt_최종.pdf](https://github.com/gdsckoreahackathon2022/42_Gabojago/files/8007317/42.ppt_.pdf)
+[42조 가보자고 ppt_최종.pdf](https://github.com/gdsckoreahackathon2022/42_Gabojago/files/8007348/42.ppt_.pdf)
+[42조 가보자고 ppt_최종.pptx](https://github.com/gdsckoreahackathon2022/42_Gabojago/files/8007349/42.ppt_.pptx)
 
 # 발표 대본
 [가보자고 발표 대본.pdf](https://github.com/gdsckoreahackathon2022/42_Gabojago/files/8007090/default.pdf)
