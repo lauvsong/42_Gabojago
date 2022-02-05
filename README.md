@@ -113,7 +113,7 @@ https://gabojago.notion.site/a3128ce9b5cb49c5be9f212ee35845de
 # 발표 대본
 [가보자고 발표 대본.pdf](https://github.com/gdsckoreahackathon2022/42_Gabojago/files/8007090/default.pdf)
 
-## 실행 
+# 실행 
 ```
 하단 압축 파일 내부 APK 실행
 ```
