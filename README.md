@@ -100,6 +100,7 @@
 https://app.swaggerhub.com/apis-docs/gabojago/gabojago/1.2.0
 - ---
 # 🎥 시연 영상
+https://user-images.githubusercontent.com/41888956/152628552-015d168d-f478-4df6-b051-2cbe5f057d48.mp4
 
 ## [협업 기록] Notion 주소
 https://gabojago.notion.site/a3128ce9b5cb49c5be9f212ee35845de
