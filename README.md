@@ -29,7 +29,6 @@
 ![image](https://user-images.githubusercontent.com/84591000/152622149-32958d69-ff15-4b9b-8c65-4c99f4556857.png)
 
 ## Google 기술
-- Flutter
 - Google mobile vision
 - Google lens
 - Google flutter
