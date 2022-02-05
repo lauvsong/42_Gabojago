@@ -93,6 +93,9 @@ https://app.swaggerhub.com/apis-docs/gabojago/gabojago/1.2.0
 - ---
 # 🎥 시연 영상
 
+## [협업 기록] Notion 주소
+https://gabojago.notion.site/a3128ce9b5cb49c5be9f212ee35845de
+
 
 # 발표 ppt
 [42조 가보자고 ppt_최종.pptx](https://github.com/gdsckoreahackathon2022/42_Gabojago/files/8007088/42.ppt_.pptx)
