@@ -69,6 +69,12 @@ flutter:
     - img/seal.jpg
     - img/rami.PNG
     - img/whatcanwedo.PNG
+    - img/seed.png
+    - img/sprout.png
+    - img/leaf.png
+    - img/grass.png
+    - img/tree.png
+    - img/forest.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

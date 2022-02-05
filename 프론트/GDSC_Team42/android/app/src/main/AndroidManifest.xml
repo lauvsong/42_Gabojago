@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="gdsc_team42"
+        android:label="녹색 탐지기"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
