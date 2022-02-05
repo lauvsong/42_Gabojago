@@ -28,7 +28,7 @@
 # 🧨 사용 기술 및 언어
 ![image](https://user-images.githubusercontent.com/84591000/152622149-32958d69-ff15-4b9b-8c65-4c99f4556857.png)
 
-## 사용 Google 기술
+## Google 기술
 - Flutter
 - Google mobile vision
 - Google lens
