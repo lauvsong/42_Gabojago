@@ -92,3 +92,7 @@
 https://app.swaggerhub.com/apis-docs/gabojago/gabojago/1.2.0
 - ---
 # 🎥 시연 영상
+
+
+# 발표 ppt
+
