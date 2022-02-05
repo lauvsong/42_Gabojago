@@ -100,10 +100,11 @@
 https://app.swaggerhub.com/apis-docs/gabojago/gabojago/1.2.0
 - ---
 # 🎥 시연 영상
+https://user-images.githubusercontent.com/41888956/152628561-449e9a74-227b-415c-9333-b7ff029124fe.mp4
+
 
 ## [협업 기록] Notion 주소
 https://gabojago.notion.site/a3128ce9b5cb49c5be9f212ee35845de
-
 
 # 발표 ppt
 [42조 가보자고 ppt_최종.pdf](https://github.com/gdsckoreahackathon2022/42_Gabojago/files/8007348/42.ppt_.pdf)
@@ -112,3 +113,8 @@ https://gabojago.notion.site/a3128ce9b5cb49c5be9f212ee35845de
 # 발표 대본
 [가보자고 발표 대본.pdf](https://github.com/gdsckoreahackathon2022/42_Gabojago/files/8007090/default.pdf)
 
+## 실행 방법
+```
+하단 압축 파일 내부 APK 실행
+```
+[Team42_녹색탐지기.zip](https://github.com/lauvsong/42_Gabojago/files/8007375/Team42_.zip)
